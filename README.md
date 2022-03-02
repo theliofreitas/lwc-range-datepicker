@@ -1,4 +1,4 @@
-# LWC Start-End Date/time picker
+# LWC Start/End datetime picker
 
 > A component that mimics the behavior of the standard Salesforce start/end datetime inputs. ☁
 

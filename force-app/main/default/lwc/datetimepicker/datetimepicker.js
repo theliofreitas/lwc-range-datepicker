@@ -4,14 +4,16 @@ import { defaultInputDate } from './helper';
 export default class Datetimepicker extends LightningElement {	
 	@api startDatetime = defaultInputDate().startDate;
 	@api endDatetime = defaultInputDate().endDate;
-	@api rangeInMinutes = 60;
+	// Time interval in milliseconds: 3600000 ms = 1 hour
+	@api rangeInMillisecs = 3600000;
 
 	handleStartDateChange(event) {
 		const currentStartDate = new Date(event.detail.value);
 		this.startDatetime = currentStartDate.toISOString();
 
 		const newEndDate = new Date(currentStartDate);
-		newEndDate.setMinutes(currentStartDate.getMinutes() + this.rangeInMinutes);
+		newEndDate.setTime(currentStartDate.getTime() + this.rangeInMillisecs);
+
 		this.endDatetime = newEndDate.toISOString();
 	}
 
@@ -21,15 +23,14 @@ export default class Datetimepicker extends LightningElement {
 
 		if (currentEndDate <= currentStartDate) {
 			const newStartDate = new Date(currentEndDate);
-			newStartDate.setMinutes(currentEndDate.getMinutes() - this.rangeInMinutes);
-		
+			newStartDate.setTime(currentEndDate.getTime() - this.rangeInMillisecs);
+
 			this.startDatetime = newStartDate.toISOString();
 		}
 		else if (currentEndDate > currentStartDate) {
-			const hours = (currentEndDate.getHours() - currentStartDate.getHours());
-			const newRange = (currentEndDate.getMinutes() - currentStartDate.getMinutes()) + (hours * 60);
-
-			this.rangeInMinutes = newRange;
+			const timeInterval = (currentEndDate - currentStartDate);
+			
+			this.rangeInMillisecs = timeInterval;
 		}
 	}
 }

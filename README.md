@@ -5,4 +5,4 @@
 ## About
 
 Collect range datetime information from the users in a Screen Flow or another LWC component.
-When the user set a value on the "Start datetime" input, the "End datetime" input is autopopulated with a predefined time range.
+When the user set a value on the "startDate" input, the "endDate" input is autopopulated with a predefined time range.

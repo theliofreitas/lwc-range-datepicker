@@ -2,18 +2,18 @@
   <div>
 		<lightning-input
       type="datetime"
-			name="startDatetime"
+			name="startDate"
 			label="Enter the start date/time value"
-			value={startDatetime}
+			value={startDate}
 			onchange={handleStartDateChange}
 			min="2017-12-19T18:13:41Z">
     </lightning-input>
-    
+    <div>{endDate}</div>
 		<lightning-input
       type="datetime"
-			name="endDatetime"
+			name="endDate"
 			label="Enter the end date/time value"
-			value={endDatetime}
+			value={endDate}
 			onchange={handleEndDateChange}
 			min="2017-12-19T18:13:41Z">
     </lightning-input>

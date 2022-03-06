@@ -13,7 +13,7 @@ describe('c-datetimepicker', () => {
     const element = createElement('c-datetimepicker', {
       is: DatetimePicker
     });
-    // element.rangeInMillisecs = 3600000;
+    element.rangeInMillisecs = 3600000;
     document.body.appendChild(element);
 
     // Query for lightning-input elements on the component
@@ -32,8 +32,56 @@ describe('c-datetimepicker', () => {
     });
   });
 
-  it('', () => {
-    
+  it('update startDate input when a lower date value is set on endDate input', () => {
+    const element = createElement('c-datetimepicker', {
+      is: DatetimePicker
+    });
+    element.rangeInMillisecs = 3600000;
+    document.body.appendChild(element);
+
+    // Query for lightning-input elements on the component
+    const querySelectorResult = element.shadowRoot.querySelectorAll('lightning-input');
+    const { startDateInput, endDateInput } = getInputs(querySelectorResult);
+
+    // Trigger endDate input change
+    endDateInput.value = '2022-03-03T09:00:00.000Z';
+    endDateInput.dispatchEvent(new CustomEvent('change', { target: {
+      value: endDateInput.value
+    }}));
+
+    // Wait the change event update the values on the screen
+    return Promise.resolve().then(() => {
+      expect(startDateInput.value).toBe('2022-03-03T08:00:00.000Z');
+    })
+  });
+
+  it('update time range when a new value is set on endDate input', () => {
+    const element = createElement('c-datetimepicker', {
+      is: DatetimePicker
+    });
+    element.rangeInMillisecs = 3600000;
+    document.body.appendChild(element);
+
+    // Query for lightning-input elements on the component
+    const querySelectorResult = element.shadowRoot.querySelectorAll('lightning-input');
+    const { startDateInput, endDateInput } = getInputs(querySelectorResult);
+
+    // Trigger startDate input change
+    startDateInput.value = '2022-03-03T10:00:00.000Z';
+    startDateInput.dispatchEvent(new CustomEvent('change', { target: {
+      value: startDateInput.value
+    }}));
+
+    // Trigger endDate input change
+    endDateInput.value = '2022-03-03T14:00:00.000Z';
+    endDateInput.dispatchEvent(new CustomEvent('change', { target: {
+      value: endDateInput.value
+    }}));
+
+    // Wait the change event update the values on the screen
+    return Promise.resolve().then(() => {
+      expect(element.rangeInMillisecs).toBe(14400000);
+    })
   });
 
   // Helper function to find the correct Lightning inputs returned by the querySelectorAll() method.

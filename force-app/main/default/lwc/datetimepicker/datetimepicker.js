@@ -2,10 +2,15 @@ import { LightningElement, api } from 'lwc';
 import { defaultInputDate } from './helper';
 
 export default class Datetimepicker extends LightningElement {	
-	@api startDate = defaultInputDate().startDate;
-	@api endDate = defaultInputDate().endDate;
-	// Time interval in milliseconds: 3600000 ms = 1 hour
-	@api rangeInMillisecs = 3600000;
+	startDate = defaultInputDate().startDate;
+	endDate = defaultInputDate().endDate;
+	@api rangeInMillisecs;
+
+	constructor() {
+		super();
+		// Default time interval in milliseconds: 3600000 ms = 1 hour
+		this.rangeInMillisecs = 3600000;
+	}
 
 	handleStartDateChange(event) {
 		const currentStartDate = new Date(event.target.value);

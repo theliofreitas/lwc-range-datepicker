@@ -84,6 +84,29 @@ describe('c-datetimepicker', () => {
     })
   });
 
+  it('update endDate input with a range of 1 day', () => {
+    const element = createElement('c-datetimepicker', {
+      is: DatetimePicker
+    });
+    // Set time range equals 1 day
+    element.rangeInMillisecs = 86400000;
+    document.body.appendChild(element);
+
+    // Query for lightning-input elements on the component
+    const querySelectorResult = element.shadowRoot.querySelectorAll('lightning-input');
+    const { startDateInput, endDateInput } = getInputs(querySelectorResult);
+
+    // Trigger startDate input change
+    startDateInput.value = '2022-03-04T07:00:00.000Z';
+    startDateInput.dispatchEvent(new CustomEvent('change', { target: {
+      value: startDateInput.value
+    }}));
+
+    return Promise.resolve().then(() => {
+      expect(endDateInput.value).toBe('2022-03-05T07:00:00.000Z')
+    });
+  });
+
   // Helper function to find the correct Lightning inputs returned by the querySelectorAll() method.
   function getInputs(queryResult) {
     let startDateInput;

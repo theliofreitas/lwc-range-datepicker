@@ -24,7 +24,6 @@ export default class Datetimepicker extends LightningElement {
 	} 
 
 	handleStartDateChange(event) {
-		console.log('caiu no handle start');
 		const currentStartDate = new Date(event.target.value);
 		this.startDate = currentStartDate.toISOString();
 
@@ -35,7 +34,6 @@ export default class Datetimepicker extends LightningElement {
 	}
 
 	handleEndDateChange(event) {
-		console.log('caiu no handle end');
 		const currentStartDate = new Date(this.startDate);
 		const currentEndDate = new Date(event.target.value);
 
@@ -50,5 +48,7 @@ export default class Datetimepicker extends LightningElement {
 			
 			this.rangeInMillisecs = timeInterval;
 		}
+
+		this.endDate = currentEndDate.toISOString();
 	}
 }

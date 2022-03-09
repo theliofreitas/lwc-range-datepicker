@@ -9,8 +9,16 @@
 
     <targetConfigs>
         <targetConfig targets="lightning__FlowScreen">
-            <property name="rangeInMillisecs" type="Integer" label="Range in milliseconds" 
-                      description="Default time range in ms"/>
+            <property name="rangeInMillisecs" type="Integer" label="Range in milliseconds" role = "inputOnly"
+                      description="Time range in ms. Leave it blank if you want to use the default value of 3600000 ms (1 hour)"/>
+            <property name="startDate" type="Datetime" role="outputOnly"
+                      description="Selected start date by user"/>
+            <property name="endDate" type="Datetime" role="outputOnly"
+                      description="Selected end date by user"/>
+            <property name="startDateLabel" type="String" role="inputOnly"
+                      description="Label for the startDate input"/>
+            <property name="endDateLabel" type="String" role="inputOnly"
+                      description="Label for the endDate input"/>
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>

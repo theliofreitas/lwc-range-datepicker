@@ -9,6 +9,30 @@ describe('c-datetimepicker', () => {
     }
   })
 
+  it('load the component with the correct default startDate and endDate', () => {
+    jest
+      .spyOn(global.Date, 'now')
+      .mockImplementationOnce(() =>
+        new Date('2022-03-01T09:10:00.000Z').valueOf()
+      );
+      
+    const element = createElement('c-datetimepicker', {
+      is: DatetimePicker
+    });
+    element.rangeInMillisecs = 1800000 // 1800000 ms = 30 minutes;
+    document.body.appendChild(element);
+
+    // Query for lightning-input elements on the component
+    const querySelectorResult = element.shadowRoot.querySelectorAll('lightning-input');
+    const { startDateInput, endDateInput } = getInputs(querySelectorResult);
+
+    // Wait the change event update the values on the screen
+    return Promise.resolve().then(() => {
+      expect(startDateInput.value).toBe('2022-03-01T10:00:00.000Z');
+      expect(endDateInput.value).toBe('2022-03-01T10:30:00.000Z');
+    });
+  });
+
   it('update endDate input when a new value is set on startDate input', () => {
     const element = createElement('c-datetimepicker', {
       is: DatetimePicker

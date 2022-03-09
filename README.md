@@ -11,5 +11,10 @@ When the user set a value on the "startDate" input, the "endDate" input is autop
 ## What I've learned
 
 - Test LWC components with Jest
-  - How to filter `shadowRoot.querySelectorAll()` results to find the exact target element
-  - Using `Promise.resolve().then()` before asserting the results to ensure that the components were updated on screen
+  - How to filter `shadowRoot.querySelectorAll()` results to find the exact target element.
+  - Using `Promise.resolve().then()` before asserting the results to ensure that the components were updated on screen.
+  - Debbuging Jest tests
+  - Mocking Date.now() in Jest with `jest.spyOn()` `and mockImplementationOnce()`.
+- Setting default value in a public `@api propety` when no value was defined by a parent component or a target config in Flow Screens/Lightning Pages, using `constructor()`. However, if a value is defined by the parent component, the constructor will be override.
+- Use of `connectedCallback()` to wait for the component be loaded in the DOM.
+- Pass output values from LWC component to Flow Screens.

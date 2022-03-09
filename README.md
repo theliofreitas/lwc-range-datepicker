@@ -18,3 +18,4 @@ When the user set a value on the "startDate" input, the "endDate" input is autop
 - Setting default value in a public `@api propety` when no value was defined by a parent component or a target config in Flow Screens/Lightning Pages, using `constructor()`. However, if a value is defined by the parent component, the constructor will be override.
 - Use of `connectedCallback()` to wait for the component be loaded in the DOM.
 - Pass output values from LWC component to Flow Screens.
+- Pass output values to parent LWC components with `CustomEvent()`.

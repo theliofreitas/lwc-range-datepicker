@@ -31,6 +31,8 @@ export default class Datetimepicker extends LightningElement {
 		newEndDate.setTime(currentStartDate.getTime() + this.rangeInMillisecs);
 
 		this.endDate = newEndDate.toISOString();
+
+		this.dispatchEvent(createEvent({startDate: this.startDate, endDate: this.endDate}));
 	}
 
 	handleEndDateChange(event) {
@@ -50,5 +52,15 @@ export default class Datetimepicker extends LightningElement {
 		}
 
 		this.endDate = currentEndDate.toISOString();
+
+		this.dispatchEvent(createEvent({startDate: this.startDate, endDate: this.endDate}));
 	}
+}
+
+function createEvent(data) {
+	const event = new CustomEvent('getdatevalues', {
+		detail: data
+	});
+
+	return event;
 }

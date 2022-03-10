@@ -1,12 +1,13 @@
-# LWC Start/End datetime picker
+# LWC Range Datepicker
 
 > A component that mimics the behavior of the standard Salesforce start/end datetime inputs. ☁
 
 ## About
 
-Collect range datetime information from the users in a Screen Flow or another LWC component.
+Collect range datetime information from the users in a Screen Flow or LWC parent component.
 When the user set a value on the "startDate" input, the "endDate" input is autopopulated with a predefined time range.
 
+![Component GIF](https://media.giphy.com/media/dvUUxDrMEr3wtZE9Ro/giphy.gif)
 
 ## What I've learned
 

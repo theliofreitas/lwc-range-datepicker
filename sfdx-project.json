@@ -1,12 +1,21 @@
 {
-  "packageDirectories": [
-    {
-      "path": "force-app",
-      "default": true
+    "packageDirectories": [
+        {
+            "path": "force-app",
+            "default": true,
+            "package": "LWC Range Datepicker",
+            "versionName": "ver 1.0",
+            "versionNumber": "1.0.0.NEXT"
+        }
+    ],
+    "namespace": "tfdev",
+    "sfdcLoginUrl": "https://login.salesforce.com",
+    "sourceApiVersion": "52.0",
+    "packageAliases": {
+        "LWC Range Datepicker": "0Ho3i000000TNDgCAO",
+        "LWC Range Datepicker@0.1.0-1": "04t3i000002exdsAAA",
+        "LWC Range Datepicker@0.2.0-1": "04t3i000002exdxAAA",
+        "LWC Range Datepicker@1.0.0-1": "04t3i000002exe2AAA",
+        "LWC Range Datepicker@1.0.0-2": "04t3i000002exe7AAA"
     }
-  ],
-  "name": "lwc-range-datepicker",
-  "namespace": "",
-  "sfdcLoginUrl": "https://login.salesforce.com",
-  "sourceApiVersion": "52.0"
 }

@@ -11,27 +11,32 @@ When the user set a value on the **startDate** input, the **endDate** input is a
 
 ## Instructions
 
-#### Prerequisites
+### Prerequisites
 
-- [Install](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t3i000002exe7AAA) the managed package in your org.
+- <a href="https://login.salesforce.com/packaging/installPackage.apexp?p0=04t3i000002exe7AAA" target="_blank">Install</a> the managed package in your org.
 
-#### Adding the component inside a Screen Flow
+
+### Adding the component inside a Screen Flow
 
   - Search for the **datepicker** component and drag it into your Screen Flow.
   - Fill the input and output fields:
-  	- **Range in milliseconds**: Range between start and end date (in ms)
-    - **Start date (label)**: Label for start date input
-    - **End date (label)**: Label for end date output
-    - **Start date (output)**: Variable of datetime type to store the output value
-    - **End date (output)**: Variable of datetime type to store the output value
+  	- `Range in milliseconds`: _Range between start and end date (in ms)_
+    - `Start date (label)`: _Label for start date input_
+    - `End date (label)`: _Label for end date output_
+    - `Start date (output)`: _Variable of datetime type to store the output value_
+    - `End date (output)`: _Variable of datetime type to store the output value_
 
   ![Screen Flow Setup](https://i.ibb.co/Kbcf2Mq/screen-flow-setup-example.jpg)
 
-#### Adding the component inside another LWC Component
+&nbsp;
 
-  If you have enabled the [Lightning Web Security](https://help.salesforce.com/s/articleView?id=000363550&type=1) setting, you can add the `<tfdev-datetimepicker></tfdev-datetimepicker>` component inside any LWC component in your org.
+### Adding the component inside another LWC Component
+
+  If you have enabled the <a href="https://help.salesforce.com/s/articleView?id=000363550&type=1" target="_blank">Lightning Web Security</a> setting, you can add the `<tfdev-datetimepicker></tfdev-datetimepicker>` component inside any LWC component in your org.
 
   > 💡 In order to enable the Lightning Web Security setting go to **Setup** > **Session Settings** > Check the **"Use Lightning Web Security for Lightning web components"** option.
+
+  &nbsp;
 
   There's an example of this implementation:
   
@@ -59,6 +64,8 @@ When the user set a value on the **startDate** input, the **endDate** input is a
   }
   ```
 
+&nbsp;
+
 ## What I've learned
 
 - Test LWC components with Jest
@@ -71,4 +78,4 @@ When the user set a value on the **startDate** input, the **endDate** input is a
 - Pass output values from LWC component to Flow Screens.
 - Pass output values to parent LWC components with `CustomEvent()`.
 - How to setup Namespaces and Second-Generation Managed Packages.
-- [Lightning Web Security](https://help.salesforce.com/s/articleView?id=000363550&type=1) enablement to allow cross-namespace component use.
+- <a href="https://help.salesforce.com/s/articleView?id=000363550&type=1" target="_blank">Lightning Web Security</a> enablement to allow cross-namespace component use.

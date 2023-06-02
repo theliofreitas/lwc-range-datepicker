@@ -13,8 +13,7 @@ When the user set a value on the **startDate** input, the **endDate** input is a
 
 ### Prerequisites
 
-- <a href="https://login.salesforce.com/packaging/installPackage.apexp?p0=04t3i000002exe7AAA" target="_blank">Install</a> the managed package in your org.
-
+- [Install](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t3i000002exe7AAA) the managed package in your org.
 
 ### Adding the component inside a Screen Flow
 
@@ -32,7 +31,7 @@ When the user set a value on the **startDate** input, the **endDate** input is a
 
 ### Adding the component inside another LWC Component
 
-  If you have enabled the <a href="https://help.salesforce.com/s/articleView?id=000363550&type=1" target="_blank">Lightning Web Security</a> setting, you can add the `<tfdev-datetimepicker></tfdev-datetimepicker>` component inside any LWC component in your org.
+  If you have enabled the [Lightning Web Security](https://help.salesforce.com/s/articleView?id=000363550&type=1) setting, you can add the `<tfdev-datetimepicker></tfdev-datetimepicker>` component inside any LWC component in your org.
 
   > 💡 In order to enable the Lightning Web Security setting go to **Setup** > **Session Settings** > Check the **"Use Lightning Web Security for Lightning web components"** option.
 
@@ -78,4 +77,4 @@ When the user set a value on the **startDate** input, the **endDate** input is a
 - Pass output values from LWC component to Flow Screens.
 - Pass output values to parent LWC components with `CustomEvent()`.
 - How to setup Namespaces and Second-Generation Managed Packages.
-- <a href="https://help.salesforce.com/s/articleView?id=000363550&type=1" target="_blank">Lightning Web Security</a> enablement to allow cross-namespace component use.
+- [Lightning Web Security](https://help.salesforce.com/s/articleView?id=000363550&type=1) enablement to allow cross-namespace component use.
